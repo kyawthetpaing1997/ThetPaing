@@ -1,7 +1,7 @@
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
-TOKEN = 'သင့်ရဲ့_ဘော့တိုကင်_ထည့်ပါ'
+TOKEN = '8686636473:AAGUGWzpHJ1hKfzQ1h8azB86poonWAG9jNI'
 bot = telebot.TeleBot(TOKEN)
 
 bot.remove_webhook()
