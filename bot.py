@@ -6,13 +6,12 @@ bot = telebot.TeleBot(TOKEN)
 
 bot.remove_webhook()
 
-WEB_APP_URL = 'https://wondrous-crostata-02d61c.netlify.app/'
+WEB_APP_URL = 'https://kyawthetpaing1997.github.io/ThetPaing/'
 IMAGE_URL = 'https://imgur.com/a/IMrdKeo'
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     markup = InlineKeyboardMarkup()
-    web_app = WebAppInfo(url=WEB_APP_URL)
     markup.add(InlineKeyboardButton("🚀 Start Mine MRCT 🚀", web_app=web_app))
     
     welcome_text = "👋 Hello! Welcome to MRCT Official Bot 👋\n\nYou Can Start Mining MRCT Journeys.\n👇👇👇👇👇👇👇👇👇"
