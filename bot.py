@@ -22,9 +22,8 @@ def send_welcome(message):
 
 
     
-  # ကြိုဆိုစာနှင့် ပုံကို ပပို့ပေးခြင်း    welcome_text = "👋 Hello! Welcome to MRCT Official Bot 👋
+  # ကြိုဆိုစာနှင့် ပုံကို ပပို့ပေးခြင်း welcome_text = "👋 Hello! Welcome to MRCT Official Bot 👋\n\nYou Can Start Mining MRCT Journeys.\n👇👇👇👇👇👇👇👇👇"
 
-You Can Start Mining MRCT Journeys."
 👇👇👇👇👇👇👇👇👇
     bot.send_photo(
         message.chat.id, 
