@@ -17,10 +17,12 @@ def send_welcome(message):
     # ဖန်တီးမယ့် Web App ခလုတ်
     markup = InlineKeyboardMarkup()
     web_app = WebAppInfo(url=WEB_APP_URL)
-    markup.add(InlineKeyboardButton("🌐 Open Web App", web_app=web_app))
+    ​markup.add(InlineKeyboardButton("🚀 Start Mine MRCT 🚀", web_app=web_app))
     
-    # ကြိုဆိုစာနှင့် ပုံကို ပို့ပေးခြင်း
-    welcome_text = "မင်္ဂလာပါရှင်! MRCT Bot မှ ကြိုဆိုပါတယ်။ အောက်ပါခလုတ်ကို နှိပ်ပြီး Web App ကို ဝင်ရောက်နိုင်ပါတယ်။"
+
+
+    
+  # ကြိုဆိုစာနှင့် ပုံကို ပပို့ပေးခြင်း    welcome_text = "မင်္ဂလာပါရှင်! MRCT Bot မှ ကြိုဆိုပါတယ်။ အောက်ပါခလုတ်ကို နှိပ်ပြီး Web App ကို ဝင်ရောက်နိုင်ပါတယ်။"
     bot.send_photo(
         message.chat.id, 
         IMAGE_URL, 
