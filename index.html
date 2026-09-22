@@ -3,101 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MRCT Mini App</title>
+    <title>MRCT Mining Mini App</title>
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
-            margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
             background-color: #0f172a;
             color: #ffffff;
-            padding-bottom: 70px;
-        }
-        .tab-content {
-            display: none;
-            padding: 20px;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #1e293b;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            border-top: 1px solid #334155;
-        }
-        .nav-item {
-            background: none;
-            border: none;
-            color: #94a3b8;
-            font-size: 12px;
-            cursor: pointer;
             text-align: center;
+            padding: 20px;
+            margin: 0;
         }
-        .nav-item.active {
-            color: #38bdf8;
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .menu-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .menu-btn:hover {
+            background-color: #2563eb;
         }
     </style>
 </head>
 <body>
-
-    <!-- Profile Tab -->
-    <div id="profile" class="tab-content active">
-        <h2>Profile</h2>
-        <p>User profile and details here...</p>
-    </div>
-
-    <!-- Mine Tab -->
-    <div id="mine" class="tab-content">
-        <h2>Mine</h2>
-        <p>Mining dashboard and speed...</p>
-    </div>
-
-    <!-- Task Tab -->
-    <div id="task" class="tab-content">
-        <h2>Task</h2>
-        <p>Daily tasks and rewards...</p>
-    </div>
-
-    <!-- Friend Tab -->
-    <div id="friend" class="tab-content">
-        <h2>Friend</h2>
-        <p>Referral and invitation list...</p>
-    </div>
-
-    <!-- Wallet Tab -->
-    <div id="wallet" class="tab-content">
-        <h2>Wallet</h2>
-        <p>Balance and withdrawal options...</p>
-    </div>
-
-    <!-- Bottom Navigation Bar -->
-    <div class="bottom-nav">
-        <button class="nav-item active" onclick="switchTab('profile', this)">Profile</button>
-        <button class="nav-item" onclick="switchTab('mine', this)">Mine</button>
-        <button class="nav-item" onclick="switchTab('task', this)">Task</button>
-        <button class="nav-item" onclick="switchTab('friend', this)">Friend</button>
-        <button class="nav-item" onclick="switchTab('wallet', this)">Wallet</button>
+    <div class="container">
+        <h1>MRCT Mining Dashboard</h1>
+        <div class="menu-list">
+            <button class="menu-btn" onclick="openTab('Profile')">👤 Profile</button>
+            <button class="menu-btn" onclick="openTab('Mine')">⛏️ Mine</button>
+            <button class="menu-btn" onclick="openTab('Task')">📋 Task</button>
+            <button class="menu-btn" onclick="openTab('Friend')">👥 Friend</button>
+            <button class="menu-btn" onclick="openTab('Wallet')">💰 Wallet</button>
+        </div>
     </div>
 
     <script>
-        function switchTab(tabId, element) {
-            // Hide all tabs
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+        // Telegram Web App Initialization
+        const tg = window.Telegram.WebApp;
+        tg.expand();
 
-            // Remove active class from all nav items
-            const items = document.querySelectorAll('.nav-item');
-            items.forEach(item => item.classList.remove('active'));
-
-            // Show current tab and set active nav
-            document.getElementById(tabId).classList.add('active');
-            element.classList.add('active');
+        function openTab(tabName) {
+            alert(tabName + " မျက်နှာပြင်သို့ ရောက်ရှိပါပြီ။");
+            // ဤနေရာတွင် Tab တစ်ခုချင်းစီအတွက် လုပ်ဆောင်ချက်များကို ဆက်လက်ရေးသားနိုင်ပါသည်
         }
     </script>
 </body>
